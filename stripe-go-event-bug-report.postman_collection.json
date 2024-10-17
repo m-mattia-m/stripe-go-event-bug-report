@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "445d8335-5d45-49c2-bb50-de2dfbec116e",
+		"name": "stripe-go-event-bug-report",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25187578"
+	},
+	"item": [
+		{
+			"name": "Webhook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"api_version\" : \"2022-11-15\",\n  \"created\" : 1234567890,\n  \"data\" : {\n    \"object\" : {\n      \"amount\" : 1000,\n      \"amount_captured\" : 1000,\n      \"amount_refunded\" : 0,\n      \"application\" : null,\n      \"application_fee\" : null,\n      \"application_fee_amount\" : null,\n      \"balance_transaction\" : \"txn_12345\",\n      \"billing_details\" : {\n        \"address\" : {\n          \"city\" : null,\n          \"country\" : null,\n          \"line1\" : null,\n          \"line2\" : null,\n          \"postal_code\" : \"12345\",\n          \"state\" : null\n        },\n        \"email\" : null,\n        \"name\" : null,\n        \"phone\" : null\n      },\n      \"calculated_statement_descriptor\" : \"MYCOMPANY\",\n      \"captured\" : true,\n      \"created\" : 1234567890,\n      \"currency\" : \"usd\",\n      \"customer\" : \"cus_12345\",\n      \"description\" : \"This is my description.\",\n      \"destination\" : null,\n      \"dispute\" : null,\n      \"disputed\" : false,\n      \"failure_balance_transaction\" : null,\n      \"failure_code\" : null,\n      \"failure_message\" : null,\n      \"fraud_details\" : { },\n      \"id\" : \"ch_12345\",\n      \"invoice\" : null,\n      \"livemode\" : false,\n      \"metadata\" : { },\n      \"object\" : \"charge\",\n      \"on_behalf_of\" : null,\n      \"order\" : null,\n      \"outcome\" : {\n        \"network_status\" : \"approved_by_network\",\n        \"reason\" : null,\n        \"risk_level\" : \"normal\",\n        \"risk_score\" : 0,\n        \"seller_message\" : \"Payment complete.\",\n        \"type\" : \"authorized\"\n      },\n      \"paid\" : true,\n      \"payment_intent\" : \"pi_12345\",\n      \"payment_method\" : \"pm_12345\",\n      \"payment_method_details\" : {\n        \"card\" : {\n          \"amount_authorized\" : 1000,\n          \"authorization_code\" : null,\n          \"brand\" : \"visa\",\n          \"checks\" : {\n            \"address_line1_check\" : null,\n            \"address_postal_code_check\" : \"pass\",\n            \"cvc_check\" : null\n          },\n          \"country\" : \"US\",\n          \"exp_month\" : 12,\n          \"exp_year\" : 2054,\n          \"extended_authorization\" : {\n            \"status\" : \"disabled\"\n          },\n          \"fingerprint\" : \"12345\",\n          \"funding\" : \"credit\",\n          \"incremental_authorization\" : {\n            \"status\" : \"unavailable\"\n          },\n          \"installments\" : null,\n          \"last4\" : \"4242\",\n          \"mandate\" : null,\n          \"multicapture\" : {\n            \"status\" : \"unavailable\"\n          },\n          \"network\" : \"visa\",\n          \"network_token\" : {\n            \"used\" : false\n          },\n          \"overcapture\" : {\n            \"maximum_amount_capturable\" : 1000,\n            \"status\" : \"unavailable\"\n          },\n          \"three_d_secure\" : null,\n          \"wallet\" : null\n        },\n        \"type\" : \"card\"\n      },\n      \"radar_options\" : { },\n      \"receipt_email\" : null,\n      \"receipt_number\" : null,\n      \"receipt_url\" : \"https://pay.stripe.com/receipts/payment/12345\",\n      \"refunded\" : false,\n      \"review\" : null,\n      \"shipping\" : null,\n      \"source\" : null,\n      \"source_transfer\" : null,\n      \"statement_descriptor\" : \"MYCOMPANY\",\n      \"statement_descriptor_suffix\" : null,\n      \"status\" : \"succeeded\",\n      \"transfer_data\" : null,\n      \"transfer_group\" : null\n    }\n  },\n  \"id\" : \"evt_12345\",\n  \"livemode\" : false,\n  \"object\" : \"event\",\n  \"pending_webhooks\" : 2,\n  \"request\" : {\n    \"id\" : \"req_12345\",\n    \"idempotency_key\" : \"12345-uuid\"\n  },\n  \"type\" : \"charge.succeeded\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/webhook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
